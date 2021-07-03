@@ -5,10 +5,14 @@ using UnityEngine;
 public class BuildingManager : MonoBehaviour
 {
     [SerializeField] private Camera mainCamera;
+    [SerializeField] private Transform pfWoodHarvester;
 
     void Update()
     {
-        Debug.Log(GetMouseWorldPosition());
+        if (Input.GetMouseButtonDown(0))
+        {
+            Instantiate(pfWoodHarvester, GetMouseWorldPosition(), Quaternion.identity);
+        }
     }
 
     private Vector3 GetMouseWorldPosition()
