@@ -5,13 +5,13 @@ using UnityEngine;
 public class BuildingManager : MonoBehaviour
 {
     [SerializeField] private Camera mainCamera;
-    [SerializeField] private Transform pfWoodHarvester;
+    [SerializeField] private BuildingTypeSO building;
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(pfWoodHarvester, GetMouseWorldPosition(), Quaternion.identity);
+            Instantiate(building.prefab, GetMouseWorldPosition(), Quaternion.identity);
         }
     }
 
