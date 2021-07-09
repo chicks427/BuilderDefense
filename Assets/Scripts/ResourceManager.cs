@@ -5,7 +5,7 @@ using UnityEngine;
 public class ResourceManager : MonoBehaviour
 {
     public static ResourceManager Instance {get ; private set;}
-    
+
     private Dictionary<ResourceTypeSO, int> resourceAmountDictionary;
 
     private void Awake()
@@ -45,5 +45,6 @@ public class ResourceManager : MonoBehaviour
     public void AddResource(ResourceTypeSO resourceType, int amount)
     {
         resourceAmountDictionary[resourceType] += amount;
+        TestLogResourceAmountDictionary();
     }
 }

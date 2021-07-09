@@ -126,3 +126,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eebd113c401ef605a9aeff544a95a2af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resourceType: {fileID: 11400000, guid: a6570651a2b926e5a9aed1328f4477b1, type: 2}
+  rate: 1

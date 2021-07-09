@@ -6,10 +6,12 @@ public class ResourceGenerator : MonoBehaviour
 {
     private float timer;
     private float timerMax;
+    [SerializeField] private ResourceTypeSO resourceType;
+    [SerializeField] private float rate;
 
     private void Awake()
     {
-        timerMax = 1;
+        timerMax = 1 / rate;
         timer = timerMax;
     }
 
@@ -19,7 +21,7 @@ public class ResourceGenerator : MonoBehaviour
         if (timer <= 0f)
         {
             timer = timerMax;
-            Debug.Log("Ding!");
+            ResourceManager.Instance.AddResource(resourceType, 1);
         }
     }
 }
