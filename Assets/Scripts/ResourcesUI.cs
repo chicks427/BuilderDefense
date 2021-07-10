@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ResourcesUI : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class ResourcesUI : MonoBehaviour
             float offsetAmount = -120f;
             resourceTransform.GetComponent<RectTransform>().anchoredPosition = new Vector2(offsetAmount * index, 0);
 
+            resourceTransform.Find("image").GetComponent<Image>().sprite = resourceType.sprite;
             index++;
         }
     }
