@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ public class ResourceManager : MonoBehaviour
     public static ResourceManager Instance {get ; private set;}
 
     private Dictionary<ResourceTypeSO, int> resourceAmountDictionary;
+
+    public event EventHandler OnResourceAmountChanged;
 
     private void Awake()
     {
@@ -45,6 +48,9 @@ public class ResourceManager : MonoBehaviour
     public void AddResource(ResourceTypeSO resourceType, int amount)
     {
         resourceAmountDictionary[resourceType] += amount;
+
+        OnResourceAmountChanged?.Invoke(this, EventArgs.Empty);
+
         TestLogResourceAmountDictionary();
     }
 

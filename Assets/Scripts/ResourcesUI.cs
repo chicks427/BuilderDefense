@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,6 +36,12 @@ public class ResourcesUI : MonoBehaviour
     }
 
     private void Start()
+    {
+        ResourceManager.Instance.OnResourceAmountChanged += ResourceManager_OnResourceAmountChanged;
+        UpdateResourceAmount();
+    }
+
+    private void ResourceManager_OnResourceAmountChanged(object sender, System.EventArgs e)
     {
         UpdateResourceAmount();
     }
