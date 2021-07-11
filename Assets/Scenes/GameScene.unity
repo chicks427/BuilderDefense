@@ -800,6 +800,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 20
+  zoomAmount: 2
+  zoomSpeed: 5
+  virtualCamera: {fileID: 1100111038}
+  minOrthographicSize: 10
+  maxOrthographicSize: 30
 --- !u!1 &962895881
 GameObject:
   m_ObjectHideFlags: 0
